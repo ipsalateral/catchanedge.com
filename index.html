@@ -36,9 +36,47 @@
   <!--Template designed by--><a href="http://www.htmltemplates.net/"><img src="images/copyright.gif" class="copyright" alt="www.htmltemplates.net"></a>
   
     <div class="left_side_bar"> 
-
       <div class="col_1">
         <h1>Select a snowboard:</h1>
+        <select name="selectcSnowboard" id="selectSnowboard">
+        <option value="">Choose One</option>
+        </select>
+        <div id="space"></div>
+        <div id="intro"></div>
+
+         <script>
+          fetch('all_boards.json')
+          .then(res => res.json())
+          .then(data => {b_list = data;
+          })
+          .then(() => {
+          b_list.forEach(function(item){
+              let o = document.createElement("option");
+              o.text = item.toUpperCase();
+              o.value = item;
+              selectSnowboard.appendChild(o);
+          })}
+          )
+        </script>
+      
+    <table>
+        <thead>
+        <tr>
+            <th>Board Name</th>
+            <th>Percent</th>
+        </tr>
+        </thead>
+        <tbody id ="data-output">
+        <!-- populated from java script file -->
+        </tbody>
+    </table>
+
+    <script src = "index.js"></script>
+
+
+    
+        <!-- <h1>Select a snowboard:</h1>
+
 
         <select name="snowboards" id="snowboards">
             <option value="yes basic">Yes Basic</option>
@@ -48,12 +86,12 @@
         
         <div id="space"></div>
         <div id="intro"></div>
-        <div id="similar_boards_object"></div>
+        <div id="similar_boards_object"></div> -->
     
         <!-- <script> src = "index.js"</script> -->
 
 
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             var selectElement = document.getElementById('snowboards');
     
        
@@ -81,7 +119,7 @@
                     divElement.innerHTML = '<p></p>';
                 }
             };
-        </script>
+        </script> -->
 
 
         <!-- <div class="box">
