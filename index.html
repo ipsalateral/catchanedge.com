@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Template 2</title>
+<title>Ride</title>
 <meta name="description" content="A description of your website">
 <meta name="keywords" content="keyword1, keyword2, keyword3">
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 
     <div class="top_banner">
       <h1>Catch An Edge</h1>
-      <p style = "color:#ff4500">Excuse me while I go wax my board.</p>
+      <p style = "color:#ff4500">It's your time.</p>
     </div>
 	
     <div class="navigation">
@@ -34,36 +34,58 @@
   <div id="page_content"> 
 
   <!--Template designed by--><a href="http://www.htmltemplates.net/"><img src="images/copyright.gif" class="copyright" alt="www.htmltemplates.net"></a>
-  
+    
+    <!-- Create selector list of snowboards -->
     <div class="left_side_bar"> 
       <div class="col_1">
         <h1>Select a snowboard:</h1>
         <select name="selectcSnowboard" id="selectSnowboard">
-        <option value="">Choose One</option>
+          <option value="">Choose One</option>
+          <optgroup label = 'Yes' id = 'yes_cat'>
+          </optgroup>
+          <optgroup label = 'Ride' id = 'ride_cat'>
+          </optgroup>
+          <optgroup label = 'K2' id = 'k2_cat'>
+          </optgroup>
+          <optgroup label = 'Telos' id = 'telos_cat'>
+          </optgroup>
+          <optgroup label = 'Salomon' id = 'salomon_cat'>
+          </optgroup>
+          <optgroup label = 'Capita' id = 'capita_cat'>
+          </optgroup>
+          <optgroup label = 'Rome' id = 'rome_cat'>
+          </optgroup>
         </select>
+
         <div id="space"></div>
         <div id="intro"></div>
 
-         <script>
-          fetch('all_boards.json')
+        <!-- Fill in the selector list values from file data -->
+        <!-- model_by_make is dictionary {'Yes': ['Yes Basic','Yes Typo',..]} -->
+        <script>
+          fetch('model_by_make.json')
           .then(res => res.json())
           .then(data => {b_list = data;
           })
           .then(() => {
-          b_list.forEach(function(item){
-              let o = document.createElement("option");
-              o.text = item;
-              o.value = item;
-              selectSnowboard.appendChild(o);
-          })}
-          )
+         for (make in b_list){
+              var boards = b_list[make];
+              for (i in boards) {
+                let o = document.createElement("option");
+                o.text = boards[i].replace(/[^ ]* /,'');
+                o.value = boards[i];
+                var make_cat_id = boards[i].replace(/ .*/,'').toLowerCase()+"_cat";
+                console.log('make_cat_id: '+make_cat_id)
+                document.getElementById(make_cat_id).appendChild(o);
+              }}})
         </script>
-      
+
+    <!-- Create table template for results -->
     <table>
         <thead>
         <tr>
-            <th>Board Name</th>
-            <th>Percent</th>
+            <th>Board</th>
+            <th>Similarity Rating</th>
         </tr>
         </thead>
         <tbody id ="data-output">
@@ -71,57 +93,11 @@
         </tbody>
     </table>
 
+    <!-- Script fills in the table -->
     <script src = "index.js"></script>
 
 
-    
-        <!-- <h1>Select a snowboard:</h1>
-
-
-        <select name="snowboards" id="snowboards">
-            <option value="yes basic">Yes Basic</option>
-            <option value="k2 passport">K2 Passport</option>
-            <option value="rome agent">Rome Agent</option>
-        </select>
-        
-        <div id="space"></div>
-        <div id="intro"></div>
-        <div id="similar_boards_object"></div> -->
-    
-        <!-- <script> src = "index.js"</script> -->
-
-
-        <!-- <script type="text/javascript">
-            var selectElement = document.getElementById('snowboards');
-    
-       
-            var divElement = document.getElementById('intro');
-            var divElement2 = document.getElementById('space');
-            var divElement1 = document.getElementById('similar_boards_object');
-            selectElement.onchange = function () {
-                var selectedValue = selectElement.options[selectElement.selectedIndex].value;
-                if (selectedValue) {
-                  
-                    
-                    function getData(file, cb) {
-                        fetch(file)
-                        .then(response => response.json())
-                        .then(result => cb(result));
-    
-                    }
-                     getData("similar_boards.json", (data) => console.log( data ))
-                     getData("similar_boards.json", (data) => divElement1.textContent=data[selectedValue])
-                     divElement.textContent="The most similar snowboards are: ";
-                     divElement2.innerHTML = '<p> <br> </p>'
-                }
-                   
-                 else  {
-                    divElement.innerHTML = '<p></p>';
-                }
-            };
-        </script> -->
-
-
+  
         <!-- <div class="box">
           <ul>
             <li><a href="#">Menu Item 1</a></li>
