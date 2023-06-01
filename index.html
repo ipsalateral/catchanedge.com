@@ -6,13 +6,12 @@
 <meta name="description" content="A description of your website">
 <meta name="keywords" content="keyword1, keyword2, keyword3">
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.plot.ly/plotly-2.20.0.min.js" charset="utf-8"></script>
 </head>
+
 <body>
-
 <div id="wrapper"> 
-
   <div id="header"> 
-
     <div class="top_banner">
       <h1>Catch An Edge</h1>
       <p style = "color:#ff4500">It's your time.</p>
@@ -33,17 +32,21 @@
 
   <div id="page_content"> 
 
-  <!--Template designed by--><a href="http://www.htmltemplates.net/"><img src="images/copyright.gif" class="copyright" alt="www.htmltemplates.net"></a>
-    
     <!-- Create selector list of snowboards -->
     <div class="left_side_bar"> 
       <div class="col_1">
         <h1>Select a snowboard:</h1>
         <select name="selectcSnowboard" id="selectSnowboard">
           <option value="">Choose One</option>
+          <optgroup label = 'Bataleon' id = 'bataleon_cat'>
+          </optgroup>
+          <optgroup label = 'Burton' id = 'burton_cat'>
+          </optgroup>
           <optgroup label = 'Yes' id = 'yes_cat'>
           </optgroup>
           <optgroup label = 'Ride' id = 'ride_cat'>
+          </optgroup>
+          <optgroup label = 'Jones' id = 'jones_cat'>
           </optgroup>
           <optgroup label = 'K2' id = 'k2_cat'>
           </optgroup>
@@ -62,30 +65,16 @@
 
         <!-- Fill in the selector list values from file data -->
         <!-- model_by_make is dictionary {'Yes': ['Yes Basic','Yes Typo',..]} -->
-        <script>
-          fetch('model_by_make.json')
-          .then(res => res.json())
-          .then(data => {b_list = data;
-          })
-          .then(() => {
-         for (make in b_list){
-              var boards = b_list[make];
-              for (i in boards) {
-                let o = document.createElement("option");
-                o.text = boards[i].replace(/[^ ]* /,'');
-                o.value = boards[i];
-                var make_cat_id = boards[i].replace(/ .*/,'').toLowerCase()+"_cat";
-                console.log('make_cat_id: '+make_cat_id)
-                document.getElementById(make_cat_id).appendChild(o);
-              }}})
-        </script>
+        <script src = "selector_data.js"></script>
 
     <!-- Create table template for results -->
     <table>
         <thead>
         <tr>
-            <th>Board</th>
-            <th>Similarity Rating</th>
+            <!-- <th>Board</th>
+            <th>Similarity Rating</th> -->
+            <th id = 'table_head1'></th>
+            <th id = 'table_head2'></th>
         </tr>
         </thead>
         <tbody id ="data-output">
@@ -95,84 +84,19 @@
 
     <!-- Script fills in the table -->
     <script src = "index.js"></script>
-
-
-  
-        <!-- <div class="box">
-          <ul>
-            <li><a href="#">Menu Item 1</a></li>
-            <li><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
-            <li><a href="#">Menu Item 4</a></li>
-            <li><a href="#">Menu Item 5</a></li>
-            <li><a href="#">Menu Item 6</a></li>
-            <li><a href="#">Menu Item 7</a></li>
-            <li><a href="#">Menu Item 8</a></li>
-            <li><a href="#">Menu Item 9</a></li>
-          </ul>
-        </div> -->
-      </div>
-
-      <!-- <div class="col_1">
-        <h1>Block</h1>
-        <div class="box">
-          <p>Enter Block content here...</p>
-          <br>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
- Aenean commodo</p>
-        </div>
-      </div> -->
-
+    </div>
     </div>
 
-    <!-- <div class="right_section">
+    <div class="right_section">
       <div class="common_content">
-        <h2>Gallery</h2>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque 
-penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
- quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla 
-consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
- vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis
- vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer 
-tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
- eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, 
-eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
- a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque 
-rutrum. Aenean imperdiet.</p>
-        </div>
-      <div class="top_content">
-        <div class="column_one">
-          <h2>Subscription</h2>
-          <p>Etiam ultricies nisi vel augue. Curabitur ullamcorper 
-ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus 
-eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing 
-sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, 
-hendrerit id, lorem. Maecenas nec odio et ant</p>
-          <br>
-          <p><a href="#" class="btn">Read more</a></p></div>
-        <div class="column_two border_left">
-          <h2>Other Services</h2>
-          <p>Etiam ultricies nisi vel augue. Curabitur ullamcorper 
-ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus 
-eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing 
-sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, 
-hendrerit id, lorem. Maecenas nec odio et ant</p>
-          <br>
-          <p><a href="#" class="btn">Read more</a></p></div>
+        <div id = 'freqPlot',class = "plotly"></div>
+        <!-- script creats the chart of most popular snowboards -->
+        <script src = popularity.js></script>
       </div>
-    </div> -->
-
-    <div class="clear"></div>
-    
-    <!-- <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net/" target="_blank">HTML Templates</a><br> -->
-    
     </div>
-	
-  </div>
 
-</div>
+    
+
+
 
 </body></html>

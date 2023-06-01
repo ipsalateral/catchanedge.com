@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js" charset="utf-8"></script>
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        console.log('Hello, everybody.')
+        const letter = ['a','b','c','d'];
+        const object = {'aaron': [50,49,48], 'nat':[45,44],'dylan':[5,4,3,2,1]}
+        for (x in letter) {
+            console.log(letter[x]);
+        }
+        for (const item in object) {
+            console.log(`${item} : ${object[item]}`)
+        }
+        // for (const property in object) {
+        //     console.log(`${property}: ${object[property]}`);
+        // }
+    </script>
+    <div id = "myDiv"></div>
+    <!-- <div id = "myPlot"></div> -->
+    <script>
+        
+        var data = [
+        {
+        x: ['giraffes', 'orangutans', 'monkeys'],
+        y: [20, 14, 23],
+        type: 'bar'
+        }
+         ];
+  
+        Plotly.newPlot('myDiv', data);
+        // Plotly.newPlot('myPlot', data);
+    </script>
+
+    <script>
+        fetch("popularity.json")
+        .then(res => res.json())
+        .then(data => {freqData = data;
+        })
+        .then(() => {
+        // console.log(freqData);
+        var layout = {
+            xaxis: {
+                title: 'Rank'
+            },
+            yaxis: {
+                title: '',
+                type: 'category'
+            }
+        }
+        Plotly.newPlot('myDiv',freqData,layout)
+        })
+        </script>
+</body>
+</html>
