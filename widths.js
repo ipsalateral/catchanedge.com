@@ -6,7 +6,7 @@ fetch("widths.json")
     var layout = {
         autosize: false,
         width: 700,
-        height: 1100,
+        height: 1300,
         margin: {
             l: 220,
             r: 50,
@@ -42,7 +42,7 @@ fetch("widths.json")
               x0: 25,
               y0: 0,
               x1: 25,
-              y1: 75,
+              y1: 93,
               line: {
                 color: '#E9F125',
                 width: 1
@@ -53,7 +53,7 @@ fetch("widths.json")
                 x0: 26,
                 y0: 0,
                 x1: 26,
-                y1: 75,
+                y1: 93,
                 line: {
                   color: '#E9F125',
                   width: 1
@@ -64,7 +64,7 @@ fetch("widths.json")
                 x0: 27,
                 y0: 0,
                 x1: 27,
-                y1: 75,
+                y1: 93,
                 line: {
                   color: '#E9F125',
                   width: 1
