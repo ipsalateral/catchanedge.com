@@ -115,6 +115,8 @@ h6 {
 	******************************/
 	hr {border-bottom: 1px solid #5F6C73;margin:5px 0;padding:0;height:2px;width:100%; margin-bottom:10px;}
 
+	/* . is for specific areas defined by the class, for example <p class ="clear">
+	will us this formatting */
 .clear {
 	clear:both;
 }
@@ -127,16 +129,12 @@ h6 {
 	float:right;
 }
 
-.copyright {
-	border: 0px;
-	height: 1px;
-	width: 1px;
-}
 
+/* # is used for styling a specific id */
 #wrapper {
 	width:900px;
-	margin:0 auto;
-	padding:20px 0 10px 0;
+	margin:auto;
+	padding:0 0 0 0;
 }
 
 /*----start header----*/
@@ -159,10 +157,8 @@ h6 {
 	padding:0px 0px 10px;
 }
 
-#header h1 a {
-	color:#ff4500;
-	text-decoration: none;
-}
+
+
 
 #header h1 a:hover {
 	text-decoration: none;
@@ -171,7 +167,7 @@ h6 {
 #header p{
 	font-size:16px;
 	margin-left:1px;
-	color:#c3dae0;
+	color:#ff4500;
 }
 
 .navigation{
@@ -217,122 +213,80 @@ h6 {
 #page_content .right_section{
 	width:600px;
 	float:right;
+	border:white; 
+	border-width:5px; 
+	border-style:solid;
 }
 
-#page_content .right_section .top_content{
-	padding:15px 0 0px 0;
-}
-
-#page_content .right_section .top_content .column_one{
-	width:300px;
-	float:left;
-	margin-bottom:20px;
-}
-
-#page_content .right_section .top_content .column_two{
-	width:300px;
-	float:right;
-	margin-bottom:20px;
-}
-
-a.btn{
-	color:#0a0800;
-	font-size:12px;
-	text-decoration:none;
-	padding:6px 13px 6px 13px;
+#page_content .right_section h1 {
+	font-style: italic;
+	font-size:15px;
+	padding:0 0 0 0 px;
 	font-weight:bold;
-	display:inline-block;
-	border:#566568 solid 1px;
-	background-color:#97aaae;
+	margin-bottom:5px;
+	color: white;
+	text-align:center;
+	
 }
 
-a.btn:hover{
-	text-decoration:none;
-}
-
-.common_content{
-	padding:0 0 20px 0;
-}
-
-.border_left{
-	border-left:#6e7678 dotted 1px;
-	padding-left:20px;
-
-}
-
-.border_none{
-	border:none!important;
-	margin:0px!important;
+#page_content .right_section h2 {
+	font-size:12px;
+	padding:0 0 0 0 px;
+	font-weight:bold;
+	margin-bottom:15px;
+	color: white;
+	text-align:center;
 }
 
 .left_side_bar{
 	width:250px;
+	height:1000px;
 	float:left;
+	border:white; 
+	border-width:5px; 
+	border-style:solid;
 }
 
 .left_side_bar h1{
+	font-style: italic;
 	font-size:15px;
 	padding:0 0 0 0 px;
 	font-weight:bold;
 	margin-bottom:15px;
-	color:#9aacae;
+	color: white;
 }
+.left_side_bar h2{
+	font-size:12px;
+	padding:0 0 0 0 px;
+	font-weight:bold;
+	margin-bottom:5px;
+	color: white;
+}
+
 
 .left_side_bar .col_1{
 	padding:0px 0 20px 0;
 }
 
-.left_side_bar .col_1 .box{
-	padding:10px 15px 5px;
-	border:#283032 solid 1px;
-}
 
-.left_side_bar .col_1 .box ul{
-	margin:0px;
-	padding:0px;
-}
 
-.left_side_bar .col_1 .box ul li{
-	margin:0px 0px 8px;
-	padding:0px 0px 0px 15px;
-	font-size:13px;
-	list-style-type:none;
-	background:url(../images/li.png) no-repeat left center;
-}
 
-.left_side_bar .col_1 .box ul li a{
-	color:#9aacae;
-	text-decoration:underline;
-}
+/* .left_side_bar2 {
+	width:190px;
+	float:left;
+	border:white; 
+	border-width:5px; 
+	border-style:solid;
+	background:url(../images/jump1.png) no-repeat left top;
+  	padding: 550px 50px 20px 20px;
+	margin-top:910px; 
+	margin-bottom:0;
+	margin-left: 0;
+} */
 
-.left_side_bar .col_1 .box ul li a:hover{
-	color:#9aacae;
-	text-decoration:none;
-}
+
+
+
+
 /*----end page content----*/
 
-
-/*----start footer content----*/
-#footer{
-	clear:both;
-	margin-top:18px;
-	padding:15px 0 0px 0;
-	height:25px;
-	text-align:center;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:12px;
-	line-height:19px;
-	border-top:#525b60 solid 1px;
-}
-
-#footer a{
-	color: #81c266;
-	text-decoration:none;
-}
-
-#footer a:hover{
-	color: #81c266;
-	text-decoration:underline;
-}
-
-/*----end footer content----*/

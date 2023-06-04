@@ -5,7 +5,7 @@ fetch("widths.json")
 .then(() => {
     var layout = {
         autosize: false,
-        width: 700,
+        width: 600,
         height: 1300,
         margin: {
             l: 220,
@@ -21,11 +21,12 @@ fetch("widths.json")
          },
         xaxis: {
             side: 'top',
-            title: 'Waist Width of Size 156cm',
+            title: 'Waist Width',
+            
             color: '#FFFFFF',
-            range: [24.4, 28.4],
+            range: [24.5, 28.5],
             tick0: 10,
-            dtick: .2,
+            dtick: .5,
             ticklen:5,
             tickwidth:2
          

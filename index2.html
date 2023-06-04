@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ride</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style2.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.plot.ly/plotly-2.20.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    
+<div id="wrapper"> 
+
+    <!-- begin header -->
+    <div id="header"> 
+        <div class="top_banner">
+            <h1>Catch an Edge</h1>
+            <p>It's your time.</p>
+        </div>
+    </div> 
+    <!-- end header -->
+
+    <!-- Begin Page Content -->
+    <div id="page_content"> 
+
+   
+        <div class="left_section">
+            <h1 >Use this Section to Find Similar Snowboards:</h1>
+            <h2>Select a Snowboard:</h2>
+
+            <!-- Create selector list of snowboards -->
+            <div class = "center">
+                <select class = "cmb" name="selectcSnowboard" id="selectSnowboard">
+                <option value="">Choose One</option>
+                <optgroup label = 'Arbor' id = 'arbor_cat'>
+                </optgroup>
+                <optgroup label = 'Bataleon' id = 'bataleon_cat'>
+                </optgroup>
+                <optgroup label = 'Burton' id = 'burton_cat'>
+                </optgroup>
+                <optgroup label = 'Capita' id = 'capita_cat'>
+                </optgroup>
+                <optgroup label = 'Jones' id = 'jones_cat'>
+                </optgroup>
+                <optgroup label = 'K2' id = 'k2_cat'>
+                </optgroup>
+                <optgroup label = 'Ride' id = 'ride_cat'>
+                </optgroup>
+                <optgroup label = 'Rome' id = 'rome_cat'>
+                </optgroup>
+                <optgroup label = 'Salomon' id = 'salomon_cat'>
+                </optgroup>
+                <optgroup label = 'Telos' id = 'telos_cat'>
+                </optgroup>
+                <optgroup label = 'Yes' id = 'yes_cat'>
+                </optgroup>
+                </select>
+            </div>
+
+            <!-- Fill in the selector list values from file data -->
+            <script src = "selector_data.js"></script>
+
+            <!-- Create table template for results -->
+            <table>
+                <thead>
+                <tr>
+                    <!-- <th>Board</th>
+                    <th>Similarity Rating</th> -->
+                    <th id = 'table_head1'></th>
+                    <th id = 'table_head2'></th>
+                </tr>
+                </thead>
+                <tbody id ="data-output">
+                <!-- populated from java script file -->
+                </tbody>
+            </table>
+
+            <!-- Script fills in the table -->
+            <script src = "similar_boards.js"></script>
+           
+        </div>
+        <!-- END LEFT SECTION -->
+
+      
+
+ 
+        <!-- RIGHT SECTION -->
+      
+        <!-- Create Popularity Table -->
+        <div class="right_section">
+            <h1>Snowboards Ranked By Popularity</h1>
+            <div id = 'freqPlot',class = "plotly"></div>
+            <script src = popularity.js></script>
+        </div>
+
+        <!-- Create Widths Table -->
+        <div class="right_section">
+            <h1>Snowboards Ranked By Width</h1>
+            <h2>(Referenced to a Board of Length 156 cm)</h2>
+            <div id = 'widthsPlot',class = "plotly"></div>
+            <script src = widths.js></script>
+        </div>
+
+    </div>
+    <!-- End Page Content -->
+</div>
+<!-- End Wrapper -->
+
+
+</body></html>

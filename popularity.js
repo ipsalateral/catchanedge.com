@@ -5,16 +5,16 @@ fetch("popularity.json")
 .then(() => {
     var layout = {
         autosize: false,
-        width: 700,
+        width: 600,
         height: 500,
         margin: {
             l: 220,
             r: 50,
             b: 50,
-            t: 50,
+            t: 10,
             pad: 4
         },
-        title: 'Most Popular Snowboards',
+        // title: 'Most Popular Snowboards',
         font: {
             size: 12,
             color: '#FFFFFF'

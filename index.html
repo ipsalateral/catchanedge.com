@@ -12,9 +12,11 @@
 <body>
 <div id="wrapper"> 
   <div id="header"> 
+
     <div class="top_banner">
-      <h1>Catch An Edge</h1>
-      <p style = "color:#ff4500">It's your time.</p>
+      <h1>Catch an Edge</h1>
+      <p>It's your time.</p>
+      <!-- <p style = "color:#ff4500">It's your time.</p> -->
     </div>
 	
     <div class="navigation">
@@ -33,9 +35,10 @@
   <div id="page_content"> 
 
     <!-- Create selector list of snowboards -->
-    <div class="left_side_bar"> 
+    <div class="left_side_bar" > 
       <div class="col_1">
-        <h1>Select a snowboard:</h1>
+        <h1 >Use this Section to Find Similar Snowboards:</h1>
+        <h2>Select a Snowboard:</h2>
         <select name="selectcSnowboard" id="selectSnowboard">
           <option value="">Choose One</option>
           <optgroup label = 'Arbor' id = 'arbor_cat'>
@@ -69,41 +72,54 @@
         <!-- model_by_make is dictionary {'Yes': ['Yes Basic','Yes Typo',..]} -->
         <script src = "selector_data.js"></script>
 
-    <!-- Create table template for results -->
-    <table>
-        <thead>
-        <tr>
-            <!-- <th>Board</th>
-            <th>Similarity Rating</th> -->
-            <th id = 'table_head1'></th>
-            <th id = 'table_head2'></th>
-        </tr>
-        </thead>
-        <tbody id ="data-output">
-        <!-- populated from java script file -->
-        </tbody>
-    </table>
+        <!-- Create table template for results -->
+        <table>
+            <thead>
+            <tr>
+                <!-- <th>Board</th>
+                <th>Similarity Rating</th> -->
+                <th id = 'table_head1'></th>
+                <th id = 'table_head2'></th>
+            </tr>
+            </thead>
+            <tbody id ="data-output">
+            <!-- populated from java script file -->
+            </tbody>
+        </table>
 
-    <!-- Script fills in the table -->
-    <script src = "index.js"></script>
-    </div>
-    </div>
+        <!-- Script fills in the table -->
+        <script src = "similar_boards.js"></script>
+
+        <div class="left_side_bar2">
+          <div class="col_1">
+            <!-- <img src="images/jump1.png" alt="Jumping1"> -->
+          </div>
+        </div>
+
+        </div>
+        </div>
+
+
+ 
 
     <!-- Create Popularity Table -->
     <div class="right_section">
-      <div class="common_content">
+      <!-- <div class="common_content"> -->
+        <h1>Snowboards Ranked By Popularity</h1>
         <div id = 'freqPlot',class = "plotly"></div>
         <script src = popularity.js></script>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- Create Widths Table -->
     <div class="right_section">
-      <div class="common_content">
+      <!-- <div class="common_content"> -->
+        <h1>Snowboards Ranked By Width</h1>
+        <h2>(Referenced to a Board of Length 156 cm)</h2>
         <div id = 'widthsPlot',class = "plotly"></div>
         <!-- script creats the chart of most popular snowboards -->
         <script src = widths.js></script>
-      </div>
+      <!-- </div> -->
     </div>
 
     
