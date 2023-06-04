@@ -6,8 +6,8 @@
 var selectElement = document.getElementById('selectSnowboard');
 selectElement.onchange = function () {
     var selectedValue = selectElement.options[selectElement.selectedIndex].value;
-    var divElement1 = document.getElementById('space');
-    var divElement2 = document.getElementById('intro');
+    // var divElement1 = document.getElementById('space');
+    // var divElement2 = document.getElementById('intro');
     var table_heading1 = document.getElementById('table_head1')
     var table_heading2 = document.getElementById('table_head2')
     if (selectedValue) {
@@ -23,7 +23,7 @@ selectElement.onchange = function () {
                 out += `
                     <tr>
                         <td>${b.board}</td>
-                        <td>${b.percent}</td>
+                        <td>${b.percent} </td>
                     </tr>
                 `;
             }
@@ -31,7 +31,7 @@ selectElement.onchange = function () {
             table_heading1.textContent = "Board"
             table_heading2.textContent = "Similarity Rating"
             divElement1.innerHTML = '<p> <br> </p>';
-            divElement2.textContent="The most similar snowboards are: ";
+            // divElement2.textContent="The most similar snowboards are: ";
              
 
         })

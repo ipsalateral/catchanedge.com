@@ -115,11 +115,12 @@ h6 {
 		margin-left:auto;
 		margin-right:auto;
 	}
-	th {padding:3px; font-weight:bold;color:#81c266;
-		text-align: "center"}
-	tr {margin:0 0 5px 0;padding:3px;text-align: "center"}
-	td {padding:5px;margin:0 1px;
-		text-align: "center"}
+	th {padding:3px; font-weight:bold;color:#81c266}
+	tr {margin:0 0 5px 0;padding:3px;}
+	td {padding:5px;margin:0 1px;}
+	th:last-child,td:last-child {
+    text-align: center;
+	}
 	
 	/*  horizontal lines
 	******************************/
@@ -230,7 +231,7 @@ h6 {
 #page_content .right_section h1 {
 	font-style: italic;
 	font-size:15px;
-	padding:0 0 0 0 px;
+	padding:5px 0 0 0;
 	font-weight:bold;
 	margin-bottom:5px;
 	color: white;
@@ -276,14 +277,7 @@ h6 {
 	margin-bottom:5px;
 }
 
-.center {
-    text-align: left;
-	margin-left: 10px;
-    /*These options are for the div to be visible in the example, the important is the first*/
-    /* border:1px solid black; */
-    /* width: auto; */
-    /* height: 50px; */
-}
+
 
 #selectorBox {
 	text-align: left;

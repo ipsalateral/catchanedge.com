@@ -10,8 +10,8 @@ fetch("popularity.json")
         margin: {
             l: 220,
             r: 50,
-            b: 50,
-            t: 10,
+            b: 10,
+            t: 60,
             pad: 4
         },
         // title: 'Most Popular Snowboards',
@@ -20,6 +20,7 @@ fetch("popularity.json")
             color: '#FFFFFF'
          },
         xaxis: {
+            side: 'top',
             title: 'Popularity Rating',
             color: '#FFFFFF'
         },

@@ -10,8 +10,8 @@ fetch("widths.json")
         margin: {
             l: 220,
             r: 50,
-            b: 50,
-            t: 70,
+            b: 10,
+            t: 50,
             pad: 4
         },
         title: '',
