@@ -105,11 +105,21 @@ h6 {
 	ol li {font-size: 12px; line-height: 14px;margin: 0 0 10px 15px;}
 
 	/*  tables
+	tr table row
+	th header cells
+	td data cells
 	******************************/
-	table,th,td {border:1px solid #575C5F;}
-	th {padding:3px; font-weight:bold;color:#81c266;}
-	tr {margin:0 0 5px 0;padding:3px;}
-	td {padding:5px;margin:0 1px;}
+	table,th,td {
+		border:1px solid #575C5F;
+		width: 260px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	th {padding:3px; font-weight:bold;color:#81c266;
+		text-align: "center"}
+	tr {margin:0 0 5px 0;padding:3px;text-align: "center"}
+	td {padding:5px;margin:0 1px;
+		text-align: "center"}
 	
 	/*  horizontal lines
 	******************************/
@@ -117,7 +127,8 @@ h6 {
 
 	/* . is for specific areas defined by the class, for example <p class ="clear">
 	will us this formatting */
-.clear {
+
+	.clear {
 	clear:both;
 }
 
@@ -156,8 +167,6 @@ h6 {
 	margin:0px;
 	padding:0px 0px 10px;
 }
-
-
 
 
 #header h1 a:hover {
@@ -238,53 +247,52 @@ h6 {
 	text-align:center;
 }
 
-.left_side_bar{
-	width:250px;
-	height:1000px;
+/* LEFT SECTION */
+#page_content .left_section{
+	width:270px;
 	float:left;
 	border:white; 
 	border-width:5px; 
 	border-style:solid;
 }
-
-.left_side_bar h1{
+#page_content .left_section h1 {
 	font-style: italic;
 	font-size:15px;
 	padding:0 0 0 0 px;
 	font-weight:bold;
-	margin-bottom:15px;
+	margin-bottom:10px;
 	color: white;
+	text-align:center;
+	
 }
-.left_side_bar h2{
+#page_content .left_section h2 {
 	font-size:12px;
 	padding:0 0 0 0 px;
 	font-weight:bold;
-	margin-bottom:5px;
+	margin-bottom:15px;
 	color: white;
+	text-align:left;
+	margin-left: 10px;
+	margin-bottom:5px;
+}
+
+.center {
+    text-align: left;
+	margin-left: 10px;
+    /*These options are for the div to be visible in the example, the important is the first*/
+    /* border:1px solid black; */
+    /* width: auto; */
+    /* height: 50px; */
+}
+
+#selectorBox {
+	text-align: left;
+	margin-left: 10px;
 }
 
 
-.left_side_bar .col_1{
-	padding:0px 0 20px 0;
-}
 
-
-
-
-/* .left_side_bar2 {
-	width:190px;
-	float:left;
-	border:white; 
-	border-width:5px; 
-	border-style:solid;
-	background:url(../images/jump1.png) no-repeat left top;
-  	padding: 550px 50px 20px 20px;
-	margin-top:910px; 
-	margin-bottom:0;
-	margin-left: 0;
-} */
-
-
+/* END LEFT SECTION */
 
 
 
