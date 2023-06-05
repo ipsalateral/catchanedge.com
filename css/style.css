@@ -47,7 +47,8 @@ body {
 	padding:0px;
 	font-size:13px;
 	line-height:21px;
-	color:#9FB1B2;
+	/* color:#9FB1B2; */
+	color: white;
 	font-family:Arial, Helvetica, sans-serif;
 	background-color:#212b2d;
 }
@@ -117,7 +118,7 @@ h6 {
 	}
 	th {padding:3px; font-weight:bold;color:#81c266}
 	tr {margin:0 0 5px 0;padding:3px;}
-	td {padding:5px;margin:0 1px;}
+	td {padding:0px;}
 	th:last-child,td:last-child {
     text-align: center;
 	}

@@ -19,44 +19,45 @@
         for (const item in object) {
             console.log(`${item} : ${object[item]}`)
         }
-        // for (const property in object) {
-        //     console.log(`${property}: ${object[property]}`);
-        // }
+
     </script>
     <div id = "myDiv"></div>
     <!-- <div id = "myPlot"></div> -->
-    <script>
-        
-        var data = [
-        {
-        x: ['giraffes', 'orangutans', 'monkeys'],
-        y: [20, 14, 23],
-        type: 'bar'
-        }
-         ];
-  
-        Plotly.newPlot('myDiv', data);
-        // Plotly.newPlot('myPlot', data);
-    </script>
 
     <script>
-        fetch("popularity.json")
+        fetch("widths.json")
         .then(res => res.json())
-        .then(data => {freqData = data;
+        .then(data => {plotData = data;
         })
         .then(() => {
-        // console.log(freqData);
-        var layout = {
-            xaxis: {
-                title: 'Rank'
-            },
-            yaxis: {
-                title: '',
-                type: 'category'
+            // console.log(plotData[0]['y']);
+            plotData["type"] = "bar";
+            plotData["name"] = "WidthsXXXXX";
+            plotData["orientation"] = "h";
+            plotData['marker'] = {};
+            var layout = {
+                marker:{color:'red'},
+                yaxis: {
+                    title: '',
+                    type: 'category',
+    
+                },
+                
+                xaxis: {
+                    title: 'waist',
+                    range: [24.5, 28.5],
+            
+                },
+                // title: "Most Popular Snowboards"
             }
-        }
-        Plotly.newPlot('myDiv',freqData,layout)
+            // layout.marker.color = plotData.y.map(name=>name=='Ride Warpig'? 'orange' :'yellow');
+            plotData.marker.color = plotData.y.map(name=>name=='Ride Warpig'? 'orange' :'yellow')
+            console.log('x: ',layout)
+            Plotly.newPlot('myDiv',[plotData],layout)
         })
-        </script>
+    </script>
+
+   
+    
 </body>
 </html>

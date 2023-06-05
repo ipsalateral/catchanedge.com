@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function fib(n){
+            const result = [0,1,1];
+            i = 3;
+            while (i<=n) {
+                result[i] = result[i-1]+result[i-2];
+                i = i+1;
+            }
+            return result[n]
+            
+        }
+        var n = 50
+        console.log('Fib('+n+') = '+fib(n))
+        console.log('END')
+    </script>
+
+    <script>
+        name ="Arrow function"
+        let me = { 
+        name: "Regular function", 
+        thisInArrow:() => { 
+        console.log("Example of " + this.name); //no 'this' binding here 
+        }, 
+        thisInRegular(){ 
+        console.log("Example of " + this.name); //'this' binding works here 
+        } 
+        };
+        me.thisInArrow(); 
+        me.thisInRegular();
+    </script>
+
+    <script>
+        let my_object = {name:'aaron',age:50,go(){console.log('Go Faster');}};
+        console.log(my_object['name'],my_object['age'])
+        my_object.go();
+    </script>
+    <script>
+        const nums = [3,6,9];
+        let func = x => x*2+1;
+        // let x = 5;
+        console.log(nums.map(func));
+    </script>
+</body>
+</html>

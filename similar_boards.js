@@ -2,7 +2,8 @@
 
 
 
-
+import {updateWidths}  from "./widths.js";
+import {updatePopularity}  from "./popularity.js";
 var selectElement = document.getElementById('selectSnowboard');
 selectElement.onchange = function () {
     var selectedValue = selectElement.options[selectElement.selectedIndex].value;
@@ -28,12 +29,12 @@ selectElement.onchange = function () {
                 `;
             }
             placeholder.innerHTML = out;
-            table_heading1.textContent = "Board"
-            table_heading2.textContent = "Similarity Rating"
-            divElement1.innerHTML = '<p> <br> </p>';
+            table_heading1.textContent = "Board";
+            table_heading2.textContent = "Similarity Rating";
+            updateWidths(selectedValue);
+            updatePopularity(selectedValue);
+            // divElement1.innerHTML = '<p> <br> </p>';
             // divElement2.textContent="The most similar snowboards are: ";
-             
-
         })
 
     };
