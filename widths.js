@@ -13,7 +13,7 @@ export function updateWidths(selectedValue) {
     var layout = {
       autosize: false,
       width: 600,
-      height: 1300,
+      height: 1500,
       margin: {
           l: 220,
           r: 50,

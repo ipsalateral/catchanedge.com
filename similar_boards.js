@@ -20,6 +20,7 @@ selectElement.onchange = function () {
         .then(function(x){
             let placeholder = document.querySelector("#data-output");
             let out = "";
+            console.log('selected value: '+selectedValue);
             for(let b of x[selectedValue]){
                 out += `
                     <tr>
