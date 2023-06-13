@@ -252,6 +252,7 @@ h6 {
 /* LEFT SECTION */
 #page_content .left_section{
 	width:270px;
+	/* height: 800px; */
 	float:left;
 	border:white; 
 	border-width:5px; 
@@ -285,7 +286,31 @@ h6 {
 	margin-left: 10px;
 }
 
+/* for movie */
+/* clear:left seems necessary to place the movie 
+in the right place. Also in the html the movie had to 
+be inserted in a particular sequence. */
+.container {
+	padding: 0 0 0;
+	border: white;
+	border-width: 5px;
+	border-style:solid;
+	clear: left;
+	float: left;
+	margin-top: 10px;
+    width: 270px;
+    overflow: hidden;
+    display: block;
+    height: 600px;
+	
 
+	
+}
+
+#glass {
+    margin-left: -50px;
+	margin-top: -50px;
+}
 
 /* END LEFT SECTION */
 
